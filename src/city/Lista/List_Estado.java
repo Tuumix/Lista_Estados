@@ -38,8 +38,8 @@ public class List_Estado {
         ini = fim = null;
     }
 
-    public NoEstado busca(List_Estado list, String chave) {
-        NoEstado aux = list.getIni();
+    public NoEstado busca(String chave) {
+        NoEstado aux = ini;
 
         while (aux != null && !aux.getEstado().equals(chave)) {
             aux = aux.getProx();
@@ -67,31 +67,31 @@ public class List_Estado {
         }
     }
 
-    public void insere_estado(List_Estado lista, String estado, String cidade) {
+    public void insere_estado(String estado, String cidade) {
         NoEstado nc = new NoEstado(null, null, null, estado);
         NoEstado aux, ant, pos;
-
-        if (lista.getIni() == null && lista.getFim() == null) {
-            lista.setIni(nc);
-            lista.setFim(nc);
+        
+        if (ini == null && fim == null) {
+            ini = nc;
+            fim = nc;
             insere_cidades(nc, cidade);
         } else {
-            pos = busca(lista, estado);
+            pos = busca(estado);
             if (pos == null) {
-                aux = ant = lista.getIni();
+                aux = ant = ini;
 
                 while (aux.getProx() != null && estado.compareTo(aux.getEstado()) > 0) {
                     ant = aux;
                     aux = aux.getProx();
                 }
 
-                if (lista.getIni().getEstado().equals(aux.getEstado())) { //inserir no inicio
+                if (ini.getEstado().equals(aux.getEstado())) { //inserir no inicio
                     nc.setProx(aux);
                     aux.setAnt(nc);
-                    lista.setIni(nc);
-                } else if (estado.compareTo(lista.getFim().getEstado()) > 0) { //insere no final
-                    lista.getFim().setProx(nc);
-                    lista.setFim(nc);
+                    ini = nc;
+                } else if (estado.compareTo(fim.getEstado()) > 0) { //insere no final
+                    fim.setProx(nc);
+                    fim = nc;
                 } else {
                     nc.setProx(aux);
                     aux.setAnt(nc);
@@ -151,8 +151,8 @@ public class List_Estado {
         return pos;
     }
 
-    public Boolean busca_par(List_Estado lista, String estado, String cidade) {
-        NoEstado aux = lista.getIni();
+    public Boolean busca_par(String estado, String cidade) {
+        NoEstado aux = ini;
         NoCidade auxC;
         Boolean found = false;
 
