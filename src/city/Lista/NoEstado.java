@@ -12,13 +12,11 @@ package city.Lista;
 public class NoEstado {
     
     private NoEstado prox;
-    private NoCidade cidade;
     private String estado;
     private List_Cidade list_cidade;
 
-    public NoEstado(NoEstado prox, NoCidade cidade, String estado, List_Cidade list_cidade) {
+    public NoEstado(NoEstado prox, String estado, List_Cidade list_cidade) {
         this.prox = prox;
-        this.cidade = cidade;
         this.estado = estado;
         this.list_cidade = list_cidade;
     }
@@ -29,14 +27,6 @@ public class NoEstado {
 
     public void setProx(NoEstado prox) {
         this.prox = prox;
-    }
-
-    public NoCidade getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(NoCidade cidade) {
-        this.cidade = cidade;
     }
 
     public String getEstado() {

@@ -27,11 +27,9 @@ public class City {
             System.out.println("achou");*/
         List_Estado list = new List_Estado(null);
 
-        list.exibe();
-
         list.insere( "Sao Paulo", "Campinas");
         list.insere( "Sao Paulo", "Bauru");
-        /*list.insere( "Sao Paulo", "Alvares Machado");
+        list.insere( "Sao Paulo", "Alvares Machado");
         list.insere( "Parana", "Londrina");
         list.insere( "Mato Grosso do Sul", "Campo Grande");
         list.insere( "Alagoas", "Maceio");
@@ -47,9 +45,6 @@ public class City {
         list.insere( "Rondonia", "Londrina");
         list.exibe();
 
-        if (list.busca_par("Parana", "Maringa")) {
-            System.out.println("found");
-        }*/
         list.exibe();
     }
 

@@ -39,7 +39,7 @@ public class List_Estado {
         NoEstado aux, ant, pos;
 
         if (ini == null) {
-            NoEstado nc = new NoEstado(null, null, estado, new List_Cidade(null));
+            NoEstado nc = new NoEstado(null, estado, new List_Cidade(null));
             ini = nc;
             nc.getList_cidade().insere(cidade);
         } else {
@@ -55,19 +55,18 @@ public class List_Estado {
                 }
 
                 if (aux == ini) {
-                    NoEstado nc = new NoEstado(null, null, estado, new List_Cidade(null));
+                    NoEstado nc = new NoEstado(null, estado, new List_Cidade(null));
                     nc.setProx(aux);
                     ini = nc;
                     nc.getList_cidade().insere(cidade);
                 } else {
-                    NoEstado nc = new NoEstado(null, null, estado, new List_Cidade(null));
+                    NoEstado nc = new NoEstado(null, estado, new List_Cidade(null));
                     nc.setProx(ant.getProx());
                     ant.setProx(nc);
                     nc.getList_cidade().insere(cidade);
                 }
             } else {
                 pos.getList_cidade().insere(cidade);
-                //System.out.println(""+pos.getCidade().getCidade());
             }
         }
     }
@@ -75,11 +74,13 @@ public class List_Estado {
     public void exibe() {
         NoEstado aux = ini;
         NoCidade auxCid;
+        
         while (aux != null) {
-            auxCid = aux.getCidade();
+            auxCid = aux.getList_cidade().getIni();
+            System.out.println("┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉");
             System.out.println("Estado : " + aux.getEstado());
             while (auxCid != null) {
-                System.out.println("---------" + auxCid.getCidade());
+                System.out.println("⟦" + auxCid.getCidade()+"⟦⟧ ");
                 auxCid = auxCid.getBaixo();
             }
             aux = aux.getProx();

@@ -37,7 +37,7 @@ public class List_Cidade {
 
     public void insere(String cidade) {
         NoCidade aux, ant;
-
+        NoCidade pos;
         if (ini == null) {
             NoCidade nc = new NoCidade(null, cidade);
             ini = nc;
@@ -59,7 +59,7 @@ public class List_Cidade {
                 nc.setBaixo(ant.getBaixo());
                 ant.setBaixo(nc);
             }
-
+            //⟦ ⟧ 
         }
     }
 }
