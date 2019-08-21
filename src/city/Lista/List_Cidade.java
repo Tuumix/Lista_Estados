@@ -11,4 +11,17 @@ package city.Lista;
  */
 public class List_Cidade {
 
+    private NoCidade ini;
+
+    public List_Cidade(NoCidade ini) {
+        this.ini = ini;
+    }
+
+    public NoCidade getIni() {
+        return ini;
+    }
+
+    public void setIni(NoCidade ini) {
+        this.ini = ini;
+    }
 }

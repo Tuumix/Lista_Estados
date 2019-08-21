@@ -10,6 +10,7 @@ package city.Lista;
  * @author hiroshi
  */
 public class NoCidade {
+    
     private NoCidade baixo;
     private String cidade;
     

@@ -10,15 +10,17 @@ package city.Lista;
  * @author hiroshi
  */
 public class NoEstado {
-    private NoEstado ant, prox;
-    private NoCidade list_cidade;
+    
+    private NoEstado ant;
+    private NoCidade cidade;
     private String estado;
+    private List_Cidade list_cidade;
 
-    public NoEstado(NoEstado ant, NoEstado prox, NoCidade list_cidade, String estado) {
+    public NoEstado(NoEstado ant, NoCidade cidade, String estado, List_Cidade list_cidade) {
         this.ant = ant;
-        this.prox = prox;
-        this.list_cidade = list_cidade;
+        this.cidade = cidade;
         this.estado = estado;
+        this.list_cidade = list_cidade;
     }
 
     public NoEstado getAnt() {
@@ -29,20 +31,12 @@ public class NoEstado {
         this.ant = ant;
     }
 
-    public NoEstado getProx() {
-        return prox;
+    public NoCidade getCidade() {
+        return cidade;
     }
 
-    public void setProx(NoEstado prox) {
-        this.prox = prox;
-    }
-
-    public NoCidade getList_cidade() {
-        return list_cidade;
-    }
-
-    public void setList_cidade(NoCidade list_cidade) {
-        this.list_cidade = list_cidade;
+    public void setCidade(NoCidade cidade) {
+        this.cidade = cidade;
     }
 
     public String getEstado() {
@@ -52,5 +46,13 @@ public class NoEstado {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-  
+
+    public List_Cidade getList_cidade() {
+        return list_cidade;
+    }
+
+    public void setList_cidade(List_Cidade list_cidade) {
+        this.list_cidade = list_cidade;
+    }
+    
 }

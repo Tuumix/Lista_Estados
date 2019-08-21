@@ -66,6 +66,20 @@ public class Vetor {
         }
         return 1;
     }
+    
+    public void insercao_binaria(int chave){
+        int pos, aux;
+        
+        for(int i = 1; i < TL; i++)
+        {
+            aux = vet[i];
+            pos = i;
+            
+            while(pos > 0 && aux < vet[pos-1]){
+                
+            }
+        }
+    }
 
     //-------------------------------------------------------------------------------- ORDENAÇÂO
     

@@ -25,7 +25,7 @@ public class City {
 
         if(vet.busca_sentinela(5) != -1)
             System.out.println("achou");*/
-        List_Estado list = new List_Estado(null, null);
+        List_Estado list = new List_Estado(null);
         Lista lista = new Lista(null, null);
         lista.insere(lista, 0);
         lista.insere(lista, 3);
@@ -36,11 +36,7 @@ public class City {
             System.out.println("found");
         }
 
-        lista.exibe(lista);
-
-        list.insere_estado( "Sao Paulo", "Presidente Prudente");
-        list.insere_estado( "Parana", "Maringa");
-        list.insere_estado( "Sao Paulo", "Campinas");
+        /*list.insere_estado( "Sao Paulo", "Campinas");
         list.insere_estado( "Sao Paulo", "Bauru");
         list.insere_estado( "Sao Paulo", "Alvares Machado");
         list.insere_estado( "Parana", "Londrina");
@@ -55,12 +51,11 @@ public class City {
         list.insere_estado( "Para", "Belem");
         list.insere_estado( "Pernambuco", "Recife");
         list.insere_estado( "Rio de Janeiro", "Rio de janeiro");
-        list.insere_estado( "Rondonia", "Londrina");
+        list.insere_estado( "Rondonia", "Londrina");*/
 
-        if (list.busca_par("Parana", "Maringa")) {
+        /*if (list.busca_par("Parana", "Maringa")) {
             System.out.println("found");
-        }
-        list.exibe(list);
+        }*/
     }
 
     private void call_list() {
