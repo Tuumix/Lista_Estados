@@ -26,36 +26,31 @@ public class City {
         if(vet.busca_sentinela(5) != -1)
             System.out.println("achou");*/
         List_Estado list = new List_Estado(null);
-        Lista lista = new Lista(null, null);
-        lista.insere(lista, 0);
-        lista.insere(lista, 3);
 
-        if (lista.busca_sentinela(lista, 3) == null) {
-            System.out.println("not found");
-        } else {
-            System.out.println("found");
-        }
+        list.exibe();
 
-        /*list.insere_estado( "Sao Paulo", "Campinas");
-        list.insere_estado( "Sao Paulo", "Bauru");
-        list.insere_estado( "Sao Paulo", "Alvares Machado");
-        list.insere_estado( "Parana", "Londrina");
-        list.insere_estado( "Mato Grosso do Sul", "Campo Grande");
-        list.insere_estado( "Alagoas", "Maceio");
-        list.insere_estado( "Amapa", "Macapa");
-        list.insere_estado( "Amazonas", "Manaus");
-        list.insere_estado( "Ceara", "Fortaleza");
-        list.insere_estado( "Espirito Santo", "Vitoria");
-        list.insere_estado( "Mato Grosso", "Cuiaba");
-        list.insere_estado( "Maranhao", "Sao luis");
-        list.insere_estado( "Para", "Belem");
-        list.insere_estado( "Pernambuco", "Recife");
-        list.insere_estado( "Rio de Janeiro", "Rio de janeiro");
-        list.insere_estado( "Rondonia", "Londrina");*/
+        list.insere( "Sao Paulo", "Campinas");
+        list.insere( "Sao Paulo", "Bauru");
+        /*list.insere( "Sao Paulo", "Alvares Machado");
+        list.insere( "Parana", "Londrina");
+        list.insere( "Mato Grosso do Sul", "Campo Grande");
+        list.insere( "Alagoas", "Maceio");
+        list.insere( "Amapa", "Macapa");
+        list.insere( "Amazonas", "Manaus");
+        list.insere( "Ceara", "Fortaleza");
+        list.insere( "Espirito Santo", "Vitoria");
+        list.insere( "Mato Grosso", "Cuiaba");
+        list.insere( "Maranhao", "Sao luis");
+        list.insere( "Para", "Belem");
+        list.insere( "Pernambuco", "Recife");
+        list.insere( "Rio de Janeiro", "Rio de janeiro");
+        list.insere( "Rondonia", "Londrina");
+        list.exibe();
 
-        /*if (list.busca_par("Parana", "Maringa")) {
+        if (list.busca_par("Parana", "Maringa")) {
             System.out.println("found");
         }*/
+        list.exibe();
     }
 
     private void call_list() {
