@@ -13,8 +13,8 @@ public class List_Cidade {
 
     private NoCidade ini;
 
-    public List_Cidade(NoCidade ini) {
-        this.ini = ini;
+    public List_Cidade() {
+        this.ini = null;
     }
 
     public NoCidade getIni() {

@@ -13,9 +13,9 @@ public class Lista {
 
     private No ini, fim;
 
-    public Lista(No ini, No fim) {
-        this.ini = ini;
-        this.fim = fim;
+    public Lista() {
+        this.ini = null;
+        this.fim = null;
     }
 
     public No getIni() {
@@ -34,14 +34,14 @@ public class Lista {
         this.fim = fim;
     }
 
-    public void insere(Lista head, int chave) {
+    public void insere(int chave) {
         No nc = new No(null, null, chave);
         No aux;
-        if (head.getIni() == null && head.getFim() == null) {
-            head.setIni(nc);
-            head.setFim(nc);
+        if (ini == null && fim == null) {
+            ini = nc;
+            fim = nc;
         } else {
-            aux = head.getIni();
+            aux = ini;
 
             while (aux.getProx() != null) {
                 aux = aux.getProx();
@@ -49,12 +49,12 @@ public class Lista {
 
             aux.setProx(nc);
             nc.setAnt(aux);
-            head.setFim(nc);
+            fim = nc;
         }
     }
 
-    public void exibe(Lista head) {
-        No aux = head.getIni();
+    public void exibe() {
+        No aux = ini;
 
         while (aux != null) {
             System.out.println("" + aux.getNum());
@@ -62,8 +62,8 @@ public class Lista {
         }
     }
 
-    public No busca_exaustiva(Lista head, int chave) {
-        No aux = head.getIni();
+    public No busca_exaustiva(int chave) {
+        No aux = ini;
 
         while (aux != null && chave != aux.getNum()) {
             aux = aux.getProx();
@@ -75,20 +75,20 @@ public class Lista {
         return null;
     } //funcionando
 
-    public No busca_sentinela(Lista head, int chave) {
+    public No busca_sentinela(int chave) {
         No nc = new No(null, null, chave);
-        No aux = head.getIni();
-        
-        head.getFim().setProx(nc);
-        nc.setAnt(head.getFim());
-        head.setFim(nc);
-        
+        No aux = ini;
+
+        ini.setProx(nc);
+        nc.setAnt(fim);
+        fim = nc;
+
         while (aux.getNum() != chave) {
             aux = aux.getProx();
         }
 
-        head.setFim(head.getFim().getAnt());
-        head.getFim().setProx(null);
+        nc = fim;
+        fim = nc.getAnt();
         nc = null;
 
         if (aux.getProx() == null) {
@@ -96,5 +96,26 @@ public class Lista {
         }
         return aux;
     } //funcionando
-   
+
+    //-------------------------------------------------------------------- ORDENAÇÃO
+    public void selecao_direta() {
+        No posmenor, aux = ini, j;
+        int menor;
+
+        while (aux.getProx() != null) {
+            posmenor = aux;
+            menor = posmenor.getNum();
+            j = aux.getProx();
+            while (j != null) {
+                if (j.getNum() < menor) {
+                    posmenor = j;
+                    menor = j.getNum();
+                }
+                j = j.getProx();
+            }
+            posmenor.setNum(aux.getNum());
+            aux.setNum(menor);
+            aux = aux.getProx();
+        }
+    }
 }

@@ -15,8 +15,8 @@ public class NoEstado {
     private String estado;
     private List_Cidade list_cidade;
 
-    public NoEstado(NoEstado prox, String estado, List_Cidade list_cidade) {
-        this.prox = prox;
+    public NoEstado(String estado, List_Cidade list_cidade) {
+        this.prox = null;
         this.estado = estado;
         this.list_cidade = list_cidade;
     }

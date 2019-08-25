@@ -21,11 +21,23 @@ public class City {
     public static void main(String[] args) {
         /*Vetor vet = new Vetor();
         vet.inicializa_vet();
-        vet.exibe();
+        vet.exibe();*/
 
-        if(vet.busca_sentinela(5) != -1)
-            System.out.println("achou");*/
-        List_Estado list = new List_Estado(null);
+        Lista lista = new Lista();
+        lista.insere(2);
+        lista.insere(6);
+        lista.insere(7);
+        lista.insere(5);
+        lista.insere(4);
+        lista.insere(8);
+        lista.insere(9);
+
+        lista.exibe();
+        lista.selecao_direta();
+        System.out.println("-------------------");
+        lista.exibe();
+
+        /*List_Estado list = new List_Estado();
 
         list.insere( "Sao Paulo", "Campinas");
         list.insere( "Sao Paulo", "Bauru");
@@ -42,13 +54,6 @@ public class City {
         list.insere( "Para", "Belem");
         list.insere( "Pernambuco", "Recife");
         list.insere( "Rio de Janeiro", "Rio de janeiro");
-        list.insere( "Rondonia", "Londrina");
-        list.exibe();
-
-        list.exibe();
+        list.exibe();*/
     }
-
-    private void call_list() {
-    }
-
 }

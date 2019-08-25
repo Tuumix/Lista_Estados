@@ -83,6 +83,23 @@ public class Vetor {
 
     //-------------------------------------------------------------------------------- ORDENAÇÂO
     
+    public void selecao_direta(){
+        int menor, posmenor;
+        
+        for(int i = 0; i < TL - 1;i++){
+            menor = vet[i];
+            posmenor = i;
+            for(int j = i + 1; j < TL;j++){
+                if(vet[j] < menor){
+                    menor = vet[j];
+                    posmenor = j;
+                }
+            }
+            vet[posmenor] = vet[i];
+            vet[i] = menor;
+        }
+    }
+    
     public void bubble_sort() {
 
     }
