@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Vetor {
 
-    private int TL = 10;
+    private int TL = 7;
     private int[] vet = new int[100];
     private Random generator = new Random();
 
@@ -60,37 +60,35 @@ public class Vetor {
 
     public int busca_binaria(int chave) {
         int ini = 0, fim = TL - 1, meio = fim / 2;
-        
-        while(ini < fim){
-            
+
+        while (ini < fim) {
+
         }
         return 1;
     }
-    
-    public void insercao_binaria(int chave){
+
+    public void insercao_binaria(int chave) {
         int pos, aux;
-        
-        for(int i = 1; i < TL; i++)
-        {
+
+        for (int i = 1; i < TL; i++) {
             aux = vet[i];
             pos = i;
-            
-            while(pos > 0 && aux < vet[pos-1]){
-                
+
+            while (pos > 0 && aux < vet[pos - 1]) {
+
             }
         }
     }
 
     //-------------------------------------------------------------------------------- ORDENAÇÂO
-    
-    public void selecao_direta(){
+    public void selecao_direta() {
         int menor, posmenor;
-        
-        for(int i = 0; i < TL - 1;i++){
+
+        for (int i = 0; i < TL - 1; i++) {
             menor = vet[i];
             posmenor = i;
-            for(int j = i + 1; j < TL;j++){
-                if(vet[j] < menor){
+            for (int j = i + 1; j < TL; j++) {
+                if (vet[j] < menor) {
                     menor = vet[j];
                     posmenor = j;
                 }
@@ -99,8 +97,78 @@ public class Vetor {
             vet[i] = menor;
         }
     }
-    
-    public void bubble_sort() {
 
+    public void bubble_sort() {
+        int aux;
+        int tl2 = TL;
+
+        while (tl2 > 1) {
+            for (int j = 0; j < TL - 1; j++) {
+                if (vet[j] > vet[j + 1]) {
+                    aux = vet[j];
+                    vet[j] = vet[j + 1];
+                    vet[j + 1] = aux;
+                }
+            }
+            tl2--;
+        }
+    }
+
+    public void shake_sort() {
+        int ini = 0, fim = TL - 1, aux;
+
+        while (ini < fim) {
+            for (int j = 0; j < fim; j++) {
+                if (vet[j] > vet[j + 1]) {
+                    aux = vet[j];
+                    vet[j] = vet[j + 1];
+                    vet[j + 1] = aux;
+                }
+            }
+            
+            fim--;
+            
+            for(int k = fim; k > ini;k--){
+                if(vet[k] < vet[k-1]){
+                    aux = vet[k];
+                    vet[k] = vet[k-1];
+                    vet[k-1] = aux;
+                }
+            }
+            ini++;
+        }
+    }
+    
+    public void heap_sort(){
+        int pai, fe, fd, tl2 = TL, maiorf = 0, aux;
+        
+        while(tl2 != 1){
+            pai = tl2/2 - 1;
+            
+            while(pai >= 0){
+                fe = pai + pai + 1;
+                fd = fe + 1;
+                
+                if(fd < tl2){
+                    if(vet[fe] > vet[fd])
+                        maiorf = fe;
+                    else
+                        maiorf = fd;
+                }
+                else
+                    maiorf = fe;
+                if(vet[maiorf] > vet[pai]){
+                    aux = vet[pai];
+                    vet[pai] = vet[maiorf];
+                    vet[maiorf] = aux;
+                }
+                pai--;
+            }
+            
+            aux = vet[0];
+            vet[0] = vet[tl2-1];
+            vet[tl2-1] = aux;
+            tl2--;
+        }
     }
 }

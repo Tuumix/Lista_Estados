@@ -118,4 +118,20 @@ public class Lista {
             aux = aux.getProx();
         }
     }
+    
+    public void bubble_sort(){
+        No i = fim, j;
+        int val;
+        
+        while(i != null){
+            for(j = ini; j.getProx() != null; j = j.getProx()){
+                if(j.getNum() > j.getProx().getNum()){
+                    val = j.getNum();
+                    j.setNum(j.getProx().getNum());
+                    j.getProx().setNum(val);
+                }
+            }
+            i = i.getAnt();
+        }
+    }
 }

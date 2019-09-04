@@ -19,11 +19,15 @@ public class City {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*Vetor vet = new Vetor();
+        Vetor vet = new Vetor();
         vet.inicializa_vet();
-        vet.exibe();*/
+       
+        vet.exibe();
+        System.out.println("----");
+        vet.heap_sort();
+        vet.exibe();
 
-        Lista lista = new Lista();
+        /*Lista lista = new Lista();
         lista.insere(2);
         lista.insere(6);
         lista.insere(7);
@@ -33,9 +37,9 @@ public class City {
         lista.insere(9);
 
         lista.exibe();
-        lista.selecao_direta();
+        lista.bubble_sort();
         System.out.println("-------------------");
-        lista.exibe();
+        lista.exibe();*/
 
         /*List_Estado list = new List_Estado();
 
